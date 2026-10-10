@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#123d2c">
+  <title>Petualangan Penjaga Hutan</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <section id="menu" class="screen menu-screen">
+      <div class="forest-art" aria-hidden="true">
+        <div class="sun"></div><div class="mountain m1"></div><div class="mountain m2"></div>
+        <div class="tree t1">🌲</div><div class="tree t2">🌳</div><div class="tree t3">🌲</div>
+        <div class="tree t4">🌳</div><div class="tree t5">🌲</div>
+        <div class="firefly f1">✦</div><div class="firefly f2">✦</div><div class="firefly f3">✦</div>
+      </div>
+      <div class="menu-content">
+        <div class="eyebrow">GAME EDUKASI • PETUALANGAN</div>
+        <h1>🌿 Petualangan<br><span>Penjaga Hutan</span></h1>
+        <p class="intro">Jelajahi hutan ajaib, hadapi alien nakal, dan selesaikan tantangan belajar untuk menyelamatkan hutan!</p>
+        <div class="settings-grid">
+          <label>Mode pemain
+            <select id="mode"><option value="solo">Solo — 1 pemain</option><option value="duo">Duo — 2 pemain</option><option value="squad">Squad — 3 pemain</option></select>
+          </label>
+          <label>Kelas
+            <select id="grade"><option value="1">Kelas 1</option><option value="2">Kelas 2</option><option value="3">Kelas 3</option><option value="4" selected>Kelas 4</option><option value="5">Kelas 5</option><option value="6">Kelas 6</option></select>
+          </label>
+          <label>Tingkat kesulitan
+            <select id="difficulty"><option value="easy">Mudah</option><option value="medium" selected>Sedang</option><option value="hard">Sulit</option></select>
+          </label>
+          <label>Mata pelajaran
+            <select id="subject">
+              <option value="all">Petualangan Semua Mapel</option>
+              <option value="pai">Pendidikan Agama Islam</option><option value="matematika">Matematika</option>
+              <option value="indonesia">Bahasa Indonesia</option><option value="pancasila">Pendidikan Pancasila</option>
+              <option value="ipas">IPAS</option><option value="jawa">Bahasa Jawa</option>
+              <option value="inggris">Bahasa Inggris</option><option value="pjok">PJOK</option>
+              <option value="koding">Koding dan Kecerdasan Artifisial</option><option value="seni">Seni Rupa</option>
+            </select>
+          </label>
+        </div>
+        <button id="startBtn" class="primary-btn">▶ MULAI PETUALANGAN</button>
+        <div class="menu-hint">Bisa dimainkan di HP, laptop, dan Papan Interaktif Digital.</div>
+        <footer>Game ini dibuat oleh : Eko Angga Purnomo, S.Pd.</footer>
+      </div>
+    </section>
+
+    <section id="game" class="screen game-screen hidden">
+      <header class="hud">
+        <button id="homeBtn" class="small-btn" aria-label="Kembali ke menu">⌂ Menu</button>
+        <div class="hud-stat">❤️ <span id="lives">3</span></div>
+        <div class="hud-stat">⭐ Skor <span id="score">0</span></div>
+        <div class="hud-stat">📘 <span id="progress">0/10</span></div>
+        <button id="soundBtn" class="small-btn">🔊 Suara</button>
+      </header>
+      <div class="game-info"><span id="gameLabel">Kelas 4 • Matematika</span><span id="status">Kalahkan alien dan jawab soal!</span></div>
+      <div class="canvas-wrap">
+        <canvas id="world" aria-label="Area permainan petualangan"></canvas>
+        <div id="quiz" class="quiz-card hidden">
+          <div class="quiz-top"><span id="quizSubject">TANTANGAN BELAJAR</span><span id="quizNumber">Soal 1/10</span></div>
+          <h2 id="question">Pertanyaan akan tampil di sini.</h2>
+          <div id="answers" class="answers"></div>
+          <p id="feedback" aria-live="polite"></p>
+          <button id="nextQuestion" class="primary-btn hidden">Lanjutkan ▶</button>
+        </div>
+        <div id="endPanel" class="end-panel hidden">
+          <div class="trophy">🏆</div><h2>Petualangan Selesai!</h2><p id="endText">Kamu hebat!</p>
+          <button id="replayBtn" class="primary-btn">Main Lagi</button>
+          <button id="endHomeBtn" class="secondary-btn">Kembali ke Menu</button>
+        </div>
+      </div>
+      <div class="controls">
+        <div class="move-controls">
+          <button class="control-btn" id="leftBtn" aria-label="Bergerak ke kiri">◀</button>
+          <button class="control-btn" id="rightBtn" aria-label="Bergerak ke kanan">▶</button>
+        </div>
+        <div class="control-note">Geser jari ke arah sasaran untuk menyerang • Tekan lompat untuk menghindar</div>
+        <button class="control-btn jump-btn" id="jumpBtn">⤒<small>LOMPAT</small></button>
+        <button class="control-btn attack-btn" id="attackBtn">✦<small>SERANG</small></button>
+      </div>
+      <div class="keyboard-help">Laptop: A/D atau ←/→ bergerak, W/↑/Spasi lompat, klik/geser mouse untuk menyerang.</div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
